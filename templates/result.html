@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recognition Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Recognition Result</h2>
+        <p><strong>Name:</strong> {{ person.name }}</p>
+        <p><strong>Age:</strong> {{ person.age }}</p>
+        <p><strong>Job:</strong> {{ person.job }}</p>
+        <p><strong>Phone:</strong> {{ person.phone }}</p>
+        <p><strong>Address:</strong> {{ person.address }}</p>
+        <a href="/recognize">Recognize Another</a>
+    </div>
+</body>
+</html>
+
