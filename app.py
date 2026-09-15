@@ -50,6 +50,15 @@ def recognize_page():
     return render_template("recognize.html")
 
 
+@app.route("/predict", methods = ["POST"])
+def predict():
+    model_path = "model/face_model.h5"
+
+    if not os.path.exists(model_path):
+        return "Model not trained yet"
+
+    from tensorflow.keras.model import load_model
+    
 
 
 
