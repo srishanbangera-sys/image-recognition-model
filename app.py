@@ -58,7 +58,27 @@ def predict():
         return "Model not trained yet"
 
     from tensorflow.keras.model import load_model
+    model = load_model(model_path)
+
+    file = request.files["photo"]
+    img = preprocess_image(file.read())
+    img = np.expand_dims(img, axis = 0)
+
+    prediction = model.predict(img)
+
+    predicted_label = np.argmax(prediction)
+    person = collection.find_one({"label" : int(predicted_label)})
+
+    if person:
+        return render_template("result.html", person = person)
+
+    else :
+        return "Unknown Person"
+
+if __name__ == "__main__":
+    app.run(debug = True)
     
+
 
 
 
